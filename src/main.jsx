@@ -8,6 +8,7 @@ import AboutPage from "./pages/AboutPage.jsx";
 import StorePage from "./pages/StorePage.jsx";
 import CartPage from "./pages/CartPage.jsx";
 import HomePage from "./pages/HomePage.jsx";
+import CategoryPage from "./pages/CategoryPage.jsx";
 
 function App() {
   const [products, setProducts] = useState([]);
@@ -49,7 +50,7 @@ function App() {
         },
         {
           path: "store/:category",
-          element: <h1>category</h1>,
+          element: <CategoryPage products={products} />,
         },
       ],
     },

@@ -20,13 +20,13 @@ function HomePage({ products, loading }) {
 
   return (
     <main className="flex w-full flex-col items-center">
-      <section className="mt-20 flex items-center justify-center gap-8">
-        <div className="text">
+      <section className="flex justify-center gap-8">
+        <div className="text mt-20">
           <h1 className="text-7xl font-semibold">Simple</h1>
           <h1 className="text-7xl font-semibold">Good</h1>
           <h1 className="text-7xl font-semibold">Products</h1>
         </div>
-        <img className="max-w-lg" src={heroImg} alt="woman on beach" />
+        <img className="mt-32 max-w-lg" src={heroImg} alt="woman on beach" />
       </section>
       <section className="my-8 flex h-auto w-full flex-col items-center">
         <h2 className="text-3xl font-medium">Trending</h2>
