@@ -9,10 +9,12 @@ import StorePage from "./pages/StorePage.jsx";
 import CartPage from "./pages/CartPage.jsx";
 import HomePage from "./pages/HomePage.jsx";
 import CategoryPage from "./pages/CategoryPage.jsx";
+import ProductPage from "./pages/ProductPage.jsx";
 
 function App() {
   const [products, setProducts] = useState([]);
   const [loading, setLoading] = useState(true);
+  const [cart, setCart] = useState([]);
 
   useEffect(() => {
     fetch("https://fakestoreapi.com/products")
@@ -29,12 +31,14 @@ function App() {
   const router = createBrowserRouter([
     {
       path: "/",
-      element: <NavLayout />,
+      element: <NavLayout cart={cart} />,
       errorElement: <ErrorPage />,
       children: [
         {
           index: true,
-          element: <HomePage products={products} loading={loading} />,
+          element: (
+            <HomePage setCart={setCart} products={products} loading={loading} />
+          ),
         },
         {
           path: "about",
@@ -46,11 +50,15 @@ function App() {
         },
         {
           path: "cart",
-          element: <CartPage />,
+          element: <CartPage cart={cart} products={products} />,
         },
         {
           path: "store/:category",
           element: <CategoryPage products={products} />,
+        },
+        {
+          path: "store/:category/:id",
+          element: <ProductPage setCart={setCart} products={products} />,
         },
       ],
     },

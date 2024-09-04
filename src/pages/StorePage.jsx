@@ -21,35 +21,35 @@ function StorePage({ products }) {
       <div className="flex flex-col items-center gap-4 sm:flex-row sm:gap-14">
         <Link
           to="mensclothing"
-          className="flex w-48 cursor-pointer flex-col items-center"
+          className="flex w-full cursor-pointer flex-col items-center"
         >
           <h2 className="text-xl font-medium">Men's Clothing</h2>
           <img
             src={mensClothing.image}
             alt="mens clothing"
-            className="mt-4 max-h-60"
+            className="mt-4 w-1/2"
           />
         </Link>
         <Link
           to="womensclothing"
-          className="mt-8 flex w-48 cursor-pointer flex-col items-center sm:mt-0"
+          className="mt-8 flex w-full cursor-pointer flex-col items-center sm:mt-0"
         >
           <h2 className="text-xl font-medium">Women's Clothing</h2>
           <img
             src={womensClothing.image}
             alt="mens clothing"
-            className="mt-4 max-h-60"
+            className="mt-4 w-1/2"
           />
         </Link>
         <Link
           to="jewelery"
-          className="mt-8 flex w-48 cursor-pointer flex-col items-center sm:mt-0"
+          className="mt-8 flex w-full cursor-pointer flex-col items-center sm:mt-0"
         >
           <h2 className="text-xl font-medium">Jewelery</h2>
           <img
             src={jewelery.image}
             alt="mens clothing"
-            className="mt-4 max-h-60"
+            className="mt-4 w-1/2"
           />
         </Link>
       </div>
