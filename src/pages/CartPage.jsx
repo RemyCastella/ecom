@@ -3,8 +3,6 @@ import { useState } from "react";
 import { IoBagCheckOutline } from "react-icons/io5";
 
 function CartPage({ cart, products }) {
-  const [effect, setEffect] = useState(false);
-
   let cartElements = [];
   let total = 0;
 
@@ -37,7 +35,9 @@ function CartPage({ cart, products }) {
   return (
     <main className="mt-8 flex w-full flex-col items-center px-4">
       <h1 className="text-4xl font-bold">Checkout</h1>
-      <div className="mt-8 flex w-full flex-col gap-8">{cartElements}</div>
+      <div className="mt-8 flex w-full flex-col items-center gap-8">
+        {cartElements}
+      </div>
       <p className="mt-8 text-2xl">
         Total:
         <span className="ml-4 text-4xl font-medium">
@@ -45,13 +45,10 @@ function CartPage({ cart, products }) {
         </span>
       </p>
       <div
-        className={`${effect && "animate-wiggle"} mt-16 flex w-40 cursor-pointer items-center justify-center gap-2 bg-cyan-100 p-4 text-xl`}
+        className={`mt-16 flex w-40 cursor-pointer items-center justify-center gap-2 bg-cyan-100 p-4 text-xl`}
         onClick={() => {
           setEffect(true);
-        }}
-        onAnimationEnd={() => {
           alert("Thank you for shopping!");
-          setEffect(false);
         }}
       >
         <IoBagCheckOutline />

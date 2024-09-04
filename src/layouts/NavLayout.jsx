@@ -1,11 +1,12 @@
 import { useState } from "react";
 import { Link, NavLink, Outlet } from "react-router-dom";
+import { FaCartPlus } from "react-icons/fa";
 
 function NavLayout({ cart }) {
   return (
     <>
-      <header className="flex w-full items-center justify-center bg-cyan-50 p-4">
-        <div className="flex w-full max-w-6xl flex-col items-center md:flex-row md:justify-between">
+      <header className="sticky top-0 flex w-full items-center justify-center bg-cyan-50 p-4">
+        <div className="flex w-full max-w-6xl flex-col items-center md:mr-8 md:flex-row md:justify-between">
           <Link to="/" className="ml-4 text-5xl font-bold tracking-widest">
             Shinano
           </Link>
@@ -34,7 +35,8 @@ function NavLayout({ cart }) {
                   : "relative text-xl"
               }
             >
-              Cart
+              <FaCartPlus size={30} />
+
               <div className="absolute -right-5 -top-4 flex h-6 w-6 items-center justify-center rounded-full bg-pink-200 p-2 text-sm">
                 {cart.length}
               </div>
@@ -49,3 +51,5 @@ function NavLayout({ cart }) {
 }
 
 export default NavLayout;
+
+//figure out sticky header positioning

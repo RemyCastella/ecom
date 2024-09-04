@@ -16,40 +16,40 @@ function StorePage({ products }) {
   )[0];
 
   return (
-    <main className="mt-8 flex max-w-4xl flex-col items-center gap-24">
+    <main className="mt-8 flex w-full flex-col items-center gap-24">
       <h1 className="text-4xl font-bold">Products</h1>
-      <div className="flex flex-col items-center gap-4 sm:flex-row sm:gap-14">
+      <div className="flex w-full flex-col items-center gap-4 md:flex-row md:flex-wrap md:justify-center md:gap-24">
         <Link
           to="mensclothing"
-          className="flex w-full cursor-pointer flex-col items-center"
+          className="flex w-full cursor-pointer flex-col items-center md:w-auto"
         >
-          <h2 className="text-xl font-medium">Men's Clothing</h2>
+          <h2 className="text-4xl font-medium">Men's Clothing</h2>
           <img
             src={mensClothing.image}
             alt="mens clothing"
-            className="mt-4 w-1/2"
+            className="mt-4 max-h-80 max-w-80"
           />
         </Link>
         <Link
           to="womensclothing"
-          className="mt-8 flex w-full cursor-pointer flex-col items-center sm:mt-0"
+          className="mt-8 flex w-full cursor-pointer flex-col items-center md:w-auto"
         >
-          <h2 className="text-xl font-medium">Women's Clothing</h2>
+          <h2 className="text-4xl font-medium">Women's Clothing</h2>
           <img
             src={womensClothing.image}
             alt="mens clothing"
-            className="mt-4 w-1/2"
+            className="mt-4 max-h-80 max-w-80"
           />
         </Link>
         <Link
           to="jewelery"
-          className="mt-8 flex w-full cursor-pointer flex-col items-center sm:mt-0"
+          className="mt-8 flex w-full cursor-pointer flex-col items-center md:w-auto"
         >
-          <h2 className="text-xl font-medium">Jewelery</h2>
+          <h2 className="text-4xl font-medium">Jewelery</h2>
           <img
             src={jewelery.image}
             alt="mens clothing"
-            className="mt-4 w-1/2"
+            className="mt-4 max-h-80 max-w-80"
           />
         </Link>
       </div>

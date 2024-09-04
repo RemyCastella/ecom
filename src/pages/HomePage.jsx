@@ -1,3 +1,4 @@
+import React, { useState } from "react";
 import heroImg from "../assets/ecom-hero-zag.png";
 import { FaCartPlus } from "react-icons/fa";
 import addToCart from "../functions/addToCart";
@@ -17,8 +18,10 @@ function HomePage({ products, loading, setCart }) {
       </div>
       <p>{product.price}</p>
       <div
-        className="mt-4 flex cursor-pointer items-center bg-cyan-100 p-2 text-lg"
-        onClick={() => addToCart(products, product.id, setCart)}
+        className={`mt-4 flex cursor-pointer items-center bg-cyan-100 p-2 text-lg`}
+        onClick={() => {
+          addToCart(products, product.id, setCart);
+        }}
       >
         <FaCartPlus />
         <p className="ml-2">Add to cart</p>
@@ -27,7 +30,7 @@ function HomePage({ products, loading, setCart }) {
   ));
 
   return (
-    <main className="flex w-full flex-col items-center">
+    <main className="flex w-full flex-col items-center overflow-x-hidden">
       <section className="flex w-full flex-col items-center md:flex-row md:justify-center md:gap-8">
         <div className="text ml-4 mt-20 self-start">
           <h1 className="text-7xl font-semibold">Simple</h1>
@@ -35,7 +38,7 @@ function HomePage({ products, loading, setCart }) {
           <h1 className="text-7xl font-semibold">Products</h1>
         </div>
         <img
-          className="mt-8 w-full max-w-md md:mt-32"
+          className="mt-8 w-full md:mt-32 md:max-w-lg"
           src={heroImg}
           alt="woman on beach"
         />

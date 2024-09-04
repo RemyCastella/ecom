@@ -31,7 +31,7 @@ function CategoryPage({ products }) {
       key={product.id}
       className="flex h-auto w-full cursor-pointer flex-col items-center p-2"
     >
-      <img src={product.image} alt="product" className="w-1/3" />
+      <img src={product.image} alt="product" className="w-1/3 max-w-xs" />
 
       <h2 className="w-48 truncate text-ellipsis text-lg font-medium">
         {product.title}
