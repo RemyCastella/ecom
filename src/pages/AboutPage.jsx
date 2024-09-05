@@ -3,10 +3,10 @@ import aboutImg from "../assets/about-2.jpg";
 
 function AboutPage() {
   return (
-    <main className="mt-8 flex max-w-4xl flex-col items-center">
+    <main className="mt-8 flex max-w-4xl flex-col items-center px-8">
       <h1 className="text-4xl font-bold">About Us</h1>
       <img src={aboutImg} alt="" className="mt-4 w-full" />
-      <article className="mt-8 space-y-4 text-lg">
+      <article className="mt-8 space-y-4 text-xl">
         <p>
           Welcome to Shinano, your destination for simple, good products. Our
           name, Shinano, is inspired by Japan's longest river, the Shinano

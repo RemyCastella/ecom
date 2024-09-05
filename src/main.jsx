@@ -1,6 +1,7 @@
 import React, { StrictMode, useState, useEffect } from "react";
 import { createRoot } from "react-dom/client";
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
+import { Toaster, toast } from "sonner";
 import "./index.css";
 import NavLayout from "./layouts/NavLayout.jsx";
 import ErrorPage from "./pages/ErrorPage.jsx";
@@ -50,11 +51,13 @@ function App() {
         },
         {
           path: "cart",
-          element: <CartPage cart={cart} products={products} />,
+          element: (
+            <CartPage cart={cart} setCart={setCart} products={products} />
+          ),
         },
         {
           path: "store/:category",
-          element: <CategoryPage products={products} />,
+          element: <CategoryPage products={products} setCart={setCart} />,
         },
         {
           path: "store/:category/:id",
@@ -69,6 +72,7 @@ function App() {
 
 createRoot(document.getElementById("root")).render(
   <StrictMode>
+    <Toaster richColors position="top-left" />
     <App />
   </StrictMode>,
 );

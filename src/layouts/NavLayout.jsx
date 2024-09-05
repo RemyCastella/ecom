@@ -5,12 +5,12 @@ import { FaCartPlus } from "react-icons/fa";
 function NavLayout({ cart }) {
   return (
     <>
-      <header className="sticky top-0 flex w-full items-center justify-center bg-cyan-50 p-4">
+      <header className="sticky top-0 flex w-full items-center justify-center bg-white p-4">
         <div className="flex w-full max-w-6xl flex-col items-center md:mr-8 md:flex-row md:justify-between">
-          <Link to="/" className="ml-4 text-5xl font-bold tracking-widest">
+          <Link to="/" className="ml-4 text-6xl font-medium tracking-widest">
             Shinano
           </Link>
-          <nav className="mt-4 flex gap-8">
+          <nav className="mt-8 flex gap-8 md:mt-0">
             <NavLink
               to="about"
               className={({ isActive }) =>
@@ -45,7 +45,9 @@ function NavLayout({ cart }) {
         </div>
       </header>
       <Outlet />
-      {/* add footer */}
+      <footer className="mt-auto flex w-full items-center justify-center bg-white pt-8">
+        © 2024 Remy Castella. All rights reserved.
+      </footer>
     </>
   );
 }

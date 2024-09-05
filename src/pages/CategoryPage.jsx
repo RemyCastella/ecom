@@ -1,8 +1,8 @@
 import React from "react";
 import { useParams, Link } from "react-router-dom";
-import { FaArrowLeft } from "react-icons/fa";
+import AddToCartButton from "../components/AddToCartButton";
 
-function CategoryPage({ products }) {
+function CategoryPage({ products, setCart }) {
   const param = useParams();
 
   const filteredProducts =
@@ -26,18 +26,25 @@ function CategoryPage({ products }) {
   }
 
   const productElements = filteredProducts.map((product) => (
-    <Link
-      to={`${product.id}`}
-      key={product.id}
-      className="flex h-auto w-full cursor-pointer flex-col items-center p-2"
-    >
-      <img src={product.image} alt="product" className="w-1/3 max-w-xs" />
+    <div className="flex w-full flex-col items-center">
+      <Link
+        to={`${product.id}`}
+        key={product.id}
+        className="flex h-auto cursor-pointer flex-col items-center p-2"
+      >
+        <img src={product.image} alt="product" className="w-full max-w-xs" />
+      </Link>
 
       <h2 className="w-48 truncate text-ellipsis text-lg font-medium">
         {product.title}
       </h2>
-      <p>{product.price}</p>
-    </Link>
+      <p>${product.price}</p>
+      <AddToCartButton
+        products={products}
+        productId={product.id}
+        setCart={setCart}
+      />
+    </div>
   ));
 
   return (
@@ -51,16 +58,7 @@ function CategoryPage({ products }) {
       {param.category === "jewelery" && (
         <h2 className="text-center text-4xl font-bold">Jewelery</h2>
       )}
-      <div className="my-8 flex w-full flex-col items-center gap-4">
-        {productElements}
-      </div>
-      <Link
-        relative="path"
-        to=".."
-        className="flex items-center gap-4 text-3xl text-cyan-500"
-      >
-        <FaArrowLeft className="my-16" /> Go back
-      </Link>
+      <div className="my-8 flex flex-col gap-16">{productElements}</div>
     </main>
   );
 }

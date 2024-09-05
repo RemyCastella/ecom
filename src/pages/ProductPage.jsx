@@ -1,7 +1,7 @@
 import React from "react";
 import { useParams, Link } from "react-router-dom";
-import { FaArrowLeft, FaCartPlus } from "react-icons/fa";
-import addToCart from "../functions/addToCart";
+import { FaCartPlus } from "react-icons/fa";
+import AddToCartButton from "../components/AddToCartButton";
 
 function ProductPage({ products, setCart }) {
   const { category, id } = useParams();
@@ -35,24 +35,13 @@ function ProductPage({ products, setCart }) {
         <div className="flex flex-col gap-4 p-8">
           <p className="text-xl">{selectedProduct.description}</p>
           <p className="text-3xl">${selectedProduct.price}</p>
-          <div
-            className="mt-16 flex cursor-pointer items-center justify-center gap-2 bg-cyan-100 p-4 text-xl"
-            onClick={() => addToCart(products, selectedProduct.id, setCart)}
-          >
-            <FaCartPlus />
-            <p className="ml-2">Add to cart</p>
-          </div>
+          <AddToCartButton
+            products={products}
+            productId={selectedProduct.id}
+            setCart={setCart}
+          />
         </div>
       </div>
-
-      <Link
-        relative="path"
-        to=".."
-        className="mt-auto flex h-16 items-center gap-4 text-3xl text-cyan-500"
-      >
-        <FaArrowLeft className="my-16" />
-        <p>Go back</p>
-      </Link>
     </main>
   );
 }

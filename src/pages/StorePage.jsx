@@ -1,5 +1,4 @@
 import React from "react";
-import { useState } from "react";
 import { Link } from "react-router-dom";
 
 function StorePage({ products }) {
@@ -17,8 +16,8 @@ function StorePage({ products }) {
 
   return (
     <main className="mt-8 flex w-full flex-col items-center gap-24">
-      <h1 className="text-4xl font-bold">Products</h1>
-      <div className="flex w-full flex-col items-center gap-4 md:flex-row md:flex-wrap md:justify-center md:gap-24">
+      <h1 className="text-4xl font-bold">Collection</h1>
+      <div className="flex w-full flex-col items-center justify-center gap-4 md:flex-row md:flex-wrap md:items-center md:justify-center md:gap-24">
         <Link
           to="mensclothing"
           className="flex w-full cursor-pointer flex-col items-center md:w-auto"
@@ -32,7 +31,7 @@ function StorePage({ products }) {
         </Link>
         <Link
           to="womensclothing"
-          className="mt-8 flex w-full cursor-pointer flex-col items-center md:w-auto"
+          className="mt-8 flex w-full cursor-pointer flex-col items-center md:mt-0 md:w-auto"
         >
           <h2 className="text-4xl font-medium">Women's Clothing</h2>
           <img
@@ -43,7 +42,7 @@ function StorePage({ products }) {
         </Link>
         <Link
           to="jewelery"
-          className="mt-8 flex w-full cursor-pointer flex-col items-center md:w-auto"
+          className="mt-8 flex w-full cursor-pointer flex-col items-center md:mt-0 md:w-auto"
         >
           <h2 className="text-4xl font-medium">Jewelery</h2>
           <img
