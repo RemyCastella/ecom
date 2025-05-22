@@ -1,7 +1,14 @@
 import React from "react";
 import { MdDeleteForever } from "react-icons/md";
 
-export default function DeleteButton({ productId, handleDelete }) {
+interface DeleteButtonProps {
+  productId: number,
+  handleDelete: (productId: number) => void
+}
+
+export default function DeleteButton({
+  productId,
+  handleDelete }: DeleteButtonProps) {
   return (
     <button
       className="mt-4 flex w-36 items-center justify-center bg-red-600 p-2 font-medium text-white sm:mt-auto"
