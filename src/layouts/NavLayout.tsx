@@ -2,7 +2,12 @@ import { useState } from "react";
 import { Link, NavLink, Outlet } from "react-router-dom";
 import { FaCartPlus } from "react-icons/fa";
 
-function NavLayout({ cart }) {
+interface NavLayoutProps {
+  cart: number[]
+}
+
+
+function NavLayout({ cart }: NavLayoutProps) {
   return (
     <>
       <header className="sticky top-0 flex w-full items-center justify-center bg-white p-4">
@@ -53,5 +58,3 @@ function NavLayout({ cart }) {
 }
 
 export default NavLayout;
-
-//figure out sticky header positioning
