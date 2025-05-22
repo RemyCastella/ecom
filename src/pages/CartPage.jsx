@@ -19,7 +19,7 @@ function CartPage({ cart, setCart, products }) {
     const index = cart.indexOf(productId);
     const newCart = [...cart];
     newCart.splice(index, 1);
-    setCart(newCart);
+    setCart(newCart)
   }
 
   function handleDeleteItem(productId) {
