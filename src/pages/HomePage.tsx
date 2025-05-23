@@ -1,12 +1,19 @@
-import React, { useState } from "react";
+import React, { Dispatch, SetStateAction, useState } from "react";
 import heroImg from "../assets/ecom-hero-zag.png";
 import { FaCartPlus } from "react-icons/fa";
 import addToCart from "../functions/addToCart";
 import { Toaster, toast } from "sonner";
 import AddToCartButton from "../components/AddToCartButton";
 import { Link } from "react-router-dom";
+import { ProductData } from "../types/products";
 
-function HomePage({ products, loading, setCart }) {
+interface HomePageProps {
+  products: ProductData[],
+  loading: boolean,
+  setCart: Dispatch<SetStateAction<number[]>>
+}
+
+function HomePage({ products, loading, setCart }: HomePageProps) {
   const featuredProducts = products.slice(0, 5);
   const productElements = featuredProducts.map((product) => {
     const productCategory =
