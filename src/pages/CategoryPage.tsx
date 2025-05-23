@@ -63,7 +63,7 @@ function CategoryPage({ products, setCart }: CategoryPageProps) {
       {param.category === "jewelery" && (
         <h2 className="text-center text-4xl font-bold">Jewelery</h2>
       )}
-      <div className="p-2 mt-4 grid grid-cols-1 gap-4 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4">{productElements}</div>
+      <div className="p-2 mt-4 grid grid-cols-1 gap-4 sm:grid-cols-2 md:grid-cols-3">{productElements}</div>
     </main>
   );
 }
