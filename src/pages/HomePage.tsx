@@ -60,7 +60,7 @@ function HomePage({ products, loading, setCart }: HomePageProps) {
           alt="woman on beach"
         />
       </section>
-      <section className="mt-24 flex h-auto w-full flex-col items-center">
+      <section className="mt-20 flex h-auto w-full flex-col items-center">
         <h2 className="text-3xl font-medium">Trending Products</h2>
         {loading ? (
           <h2 className="mt-10">Loading products...</h2>

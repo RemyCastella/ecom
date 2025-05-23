@@ -6,7 +6,6 @@ interface NavLayoutProps {
   cart: number[]
 }
 
-
 function NavLayout({ cart }: NavLayoutProps) {
   return (
     <>
@@ -50,7 +49,7 @@ function NavLayout({ cart }: NavLayoutProps) {
         </div>
       </header>
       <Outlet />
-      <footer className="mt-auto flex w-full items-center justify-center bg-white pt-8">
+      <footer className="p-2 mt-10 flex w-full justify-center bg-white">
         © 2024 Remy Castella. All rights reserved.
       </footer>
     </>
