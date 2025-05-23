@@ -48,7 +48,7 @@ function App() {
         },
         {
           path: "store",
-          element: <StorePage products={products} loading={loading} />,
+          element: <StorePage products={products} />,
         },
         {
           path: "cart",
