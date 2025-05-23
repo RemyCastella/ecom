@@ -32,16 +32,15 @@ function CategoryPage({ products, setCart }: CategoryPageProps) {
   }
 
   const productElements = filteredProducts.map((product) => (
-    <div className="flex w-full flex-col items-center">
+    <div className="p-2 bg-slate-50 flex flex-col items-center rounded-md shadow-md">
       <Link
         to={`${product.id}`}
         key={product.id}
-        className="flex h-auto cursor-pointer flex-col items-center p-2"
       >
-        <img src={product.image} alt="product" className="w-48" />
+        <img src={product.image} alt="product" className="h-64"/>
       </Link>
 
-      <h2 className="w-48 truncate text-ellipsis text-lg font-medium">
+      <h2 className="w-full text-center truncate text-ellipsis text-lg font-medium">
         {product.title}
       </h2>
       <p>${product.price}</p>
@@ -54,7 +53,7 @@ function CategoryPage({ products, setCart }: CategoryPageProps) {
   ));
 
   return (
-    <main className="mt-8 w-full flex-col items-center px-4">
+    <main className="w-full px-4">
       {param.category === "mensclothing" && (
         <h2 className="text-center text-4xl font-bold">Men's Clothing</h2>
       )}
@@ -64,7 +63,7 @@ function CategoryPage({ products, setCart }: CategoryPageProps) {
       {param.category === "jewelery" && (
         <h2 className="text-center text-4xl font-bold">Jewelery</h2>
       )}
-      <div className="my-8 flex flex-col gap-16">{productElements}</div>
+      <div className="p-2 mt-4 grid grid-cols-1 gap-4 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4">{productElements}</div>
     </main>
   );
 }
