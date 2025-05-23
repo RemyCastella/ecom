@@ -1,7 +1,12 @@
 import React from "react";
 import { Link } from "react-router-dom";
+import { ProductData } from "../types/products";
 
-function StorePage({ products }) {
+interface StorePageProps {
+  products: ProductData[]
+}
+
+function StorePage({ products }: StorePageProps) {
   const mensClothing = products.filter(
     (product) => product.category === "men's clothing",
   )[1];
@@ -15,9 +20,9 @@ function StorePage({ products }) {
   )[0];
 
   return (
-    <main className="mt-8 flex w-full flex-col items-center gap-24">
+    <main className="mt-8 flex w-full flex-col items-center">
       <h1 className="text-4xl font-bold">Collection</h1>
-      <div className="flex w-full flex-col items-center justify-center gap-4 md:flex-row md:flex-wrap md:items-center md:justify-center md:gap-24">
+      <div className="mt-8 flex w-full flex-col items-center justify-center md:flex-row md:flex-wrap md:items-center md:justify-center md:gap-24">
         <Link
           to="mensclothing"
           className="flex w-full cursor-pointer flex-col items-center md:w-auto"
