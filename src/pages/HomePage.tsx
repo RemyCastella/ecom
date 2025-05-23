@@ -14,7 +14,7 @@ interface HomePageProps {
 }
 
 function HomePage({ products, loading, setCart }: HomePageProps) {
-  const featuredProducts = products.slice(0, 5);
+  const featuredProducts = products.slice(0, 4);
   const productElements = featuredProducts.map((product) => {
     const productCategory =
       product.category === "men's clothing"
@@ -26,10 +26,10 @@ function HomePage({ products, loading, setCart }: HomePageProps) {
     return (
       <div
         key={product.id}
-        className="flex h-auto w-1/2 cursor-pointer flex-col items-center p-2 md:w-40"
+        className="flex w-64 cursor-pointer flex-col items-center p-2"
       >
         <Link to={`/store/${productCategory}/${product.id}`}>
-          <img src={product.image} alt="product" className="h-48" />
+          <img src={product.image} alt="product" className="h-64" />
         </Link>
         <div className="flex w-full flex-col truncate">
           <h2 className="truncate text-ellipsis text-lg font-medium">
@@ -60,12 +60,12 @@ function HomePage({ products, loading, setCart }: HomePageProps) {
           alt="woman on beach"
         />
       </section>
-      <section className="my-24 flex h-auto w-full flex-col items-center">
-        <h2 className="text-3xl font-medium">Trending</h2>
+      <section className="mt-24 flex h-auto w-full flex-col items-center">
+        <h2 className="text-3xl font-medium">Trending Products</h2>
         {loading ? (
           <h2 className="mt-10">Loading products...</h2>
         ) : (
-          <div className="my-8 flex flex-wrap items-center justify-center gap-8">
+          <div className="mt-10 flex flex-wrap items-center justify-center gap-8">
             {productElements}
           </div>
         )}
