@@ -3,7 +3,8 @@ import { Link } from "react-router-dom";
 import { ProductData } from "../types/products";
 
 interface StorePageProps {
-  products: ProductData[]
+  products: ProductData[],
+  loading: boolean
 }
 
 function StorePage({ products }: StorePageProps) {

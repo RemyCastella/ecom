@@ -11,16 +11,17 @@ import CartPage from "./pages/CartPage.jsx";
 import HomePage from "./pages/HomePage.jsx";
 import CategoryPage from "./pages/CategoryPage.jsx";
 import ProductPage from "./pages/ProductPage.jsx";
+import { ProductData } from "./types/products";
 
 function App() {
-  const [products, setProducts] = useState([]);
-  const [loading, setLoading] = useState(true);
-  const [cart, setCart] = useState([]);
+  const [products, setProducts] = useState<ProductData[]>([]);
+  const [loading, setLoading] = useState<boolean>(true);
+  const [cart, setCart] = useState<number[]>([]);
 
   useEffect(() => {
     fetch("https://fakestoreapi.com/products")
       .then((res) => res.json())
-      .then((data) => {
+      .then((data: ProductData[]) => {
         const noElectronics = data.filter(
           (item) => item.category !== "electronics",
         );
@@ -70,7 +71,7 @@ function App() {
   return <RouterProvider router={router} />;
 }
 
-createRoot(document.getElementById("root")).render(
+createRoot(document.getElementById("root")!).render(
   <StrictMode>
     <Toaster richColors position="top-left" />
     <App />
