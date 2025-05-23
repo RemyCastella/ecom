@@ -1,8 +1,14 @@
-import React from "react";
+import React, { Dispatch, SetStateAction } from "react";
 import { useParams, Link } from "react-router-dom";
 import AddToCartButton from "../components/AddToCartButton";
+import { ProductData } from "../types/products";
 
-function CategoryPage({ products, setCart }) {
+interface CategoryPageProps {
+  products: ProductData[],
+  setCart: Dispatch<SetStateAction<number[]>>
+}
+
+function CategoryPage({ products, setCart }: CategoryPageProps) {
   const param = useParams();
 
   const filteredProducts =
@@ -32,7 +38,7 @@ function CategoryPage({ products, setCart }) {
         key={product.id}
         className="flex h-auto cursor-pointer flex-col items-center p-2"
       >
-        <img src={product.image} alt="product" className="w-full max-w-xs" />
+        <img src={product.image} alt="product" className="w-48" />
       </Link>
 
       <h2 className="w-48 truncate text-ellipsis text-lg font-medium">
